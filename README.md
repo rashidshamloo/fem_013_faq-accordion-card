@@ -1,2 +1,1 @@
-# fem_013_faq-accordion-card
-Front End Mentor - Project 013 - Faq Accordion Card
+# Front End Mentor - Project 013 - Faq Accordion Card
