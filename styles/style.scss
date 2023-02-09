@@ -1,0 +1,211 @@
+//font
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+//color variables
+$veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+$softRed: hsl(14, 88%, 65%);
+$softViolet: hsl(273, 75%, 66%);
+$softBlue: hsl(240, 73%, 65%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 0.75rem;
+  background: linear-gradient($softViolet, $softBlue);
+  color: $veryDarkDesaturatedBlue;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 9rem 1.5rem 0 1.5rem;
+  background-color: white;
+  padding: 0 1.5rem 2.5rem 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 2rem 2rem hsla(0, 0%, 0%, 0.2);
+  .faq-image {
+    position: relative;
+    img {
+      position: absolute;
+    }
+    .background {
+      width: 15rem;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0.1rem;
+    }
+    .main-image {
+      top: -6.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15rem;
+    }
+  }
+  .faq-box-image {
+    display: none;
+  }
+  .faq-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8rem;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .faq-item {
+      border-bottom: 0.1rem solid rgba($veryDarkDesaturatedBlue, 0.1);
+      padding: 1rem 0;
+      text-align: left;
+      width: 100%;
+      .faq-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        p {
+          font-size: 0.83rem;
+        }
+        .faq-arrow {
+          background-image: url("../images/icon-arrow-down.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          width: 0.6rem;
+          height: 0.6rem;
+          transition: transform 200ms linear;
+        }
+        .up-arrow {
+          transform: rotate(180deg);
+          transition: transform 200ms linear;
+        }
+      }
+      > p {
+        color: lighten($veryDarkDesaturatedBlue, 50%);
+        visibility: hidden;
+        overflow: hidden;
+        height: 0;
+        transition: all 300ms;
+      }
+    }
+  }
+}
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  p {
+    color: $veryDarkDesaturatedBlue;
+    margin-bottom: 0.2rem;
+    span:last-child {
+      display: block;
+    }
+  }
+  i {
+    margin: 0.25rem;
+  }
+  a {
+    color: $veryDarkDesaturatedBlue;
+  }
+  a:hover {
+    color: $softRed;
+    transition: all 300ms;
+  }
+}
+
+//media queries
+@media only screen and (min-width: 768px) and (max-width: 1040px) {
+  html {
+    font-size: 1.54vw;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  html {
+    font-size: 4.05vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  footer {
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    p {
+      margin-bottom: 0.1rem;
+    }
+    i {
+      margin: 0.1rem;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    width: 57.5rem;
+    min-height: 31.75rem;
+    flex-direction: row;
+    align-items: stretch;
+    margin-top: initial;
+    position: relative;
+    padding: 0;
+    .faq-image {
+      flex-basis: 50%;
+      overflow: hidden;
+      .background {
+        width: 60rem;
+        top: -18rem;
+        transform: initial;
+        left: -35.5rem;
+      }
+      .main-image {
+        width: 30rem;
+        transform: initial;
+        left: -5.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .faq-box-image {
+      display: initial;
+      position: absolute;
+      top: 41%;
+      width: 11.8rem;
+      left: -5.8rem;
+    }
+    .faq-container {
+      flex-basis: 50%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 4rem 6.9rem 1.5rem 1rem;
+      margin-top: initial;
+      .faq-item {
+        .faq-title {
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (pointer: fine) {
+  .faq-item:hover {
+    cursor: pointer;
+    .faq-title {
+      p {
+        color: $softRed;
+      }
+    }
+  }
+}
